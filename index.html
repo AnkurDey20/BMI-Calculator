@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BMI</title>
+
+    <link rel="icon" type="image/x-icon" href="fav.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/de1c10e5c7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="loader"></div>
+
+    <div class="dialog">
+        <div class="container dialog-container">
+                <span class="result-icon-wrap">
+                    <i class="fas fa-check-circle normal"></i>
+                </span>
+            <div class="wrapper">
+                <p class="dialog-title"></p>
+                <p class="dialog-title res"></p>
+                <button class="btn-dialog-btn">OK</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container">
+        <p class="title">BMI Calculator</p>
+        <div class="wrapper">
+
+            <div class="height-wrap">
+                <span class="icon-wrap">
+                    <i class="fas fa-ruler-vertical icon"></i>
+                </span>
+                <input type="text" placeholder="Height" class="input-height" />
+                <select class="select">
+                    <option>cm</option>
+                    <!-- <option>in</option> -->
+                </select>
+            </div>
+
+            <div class="weight-wrap">
+               <span class="icon-wrap">
+                    <i class="fas fa-weight icon"></i>
+                </span>
+                <input type="text" placeholder="Weight" class="input-weight" />
+                <select class="select">
+                    <option>kg</option>
+                    <!-- <option>lbs</option> -->
+                </select>
+            </div>
+            <button class="btn-calculate">Calculate</button>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    const dialogButton = document.getElementsByClassName("btn-dialog-btn")[0];
+    const calculateButton = document.getElementsByClassName("btn-calculate")[0];
+    const dialog = document.getElementsByClassName("dialog")[0];
+
+    let isOpened = false;
+    const toggleDialog = () => {
+        if(isOpened) {
+            dialog.classList.remove("display");
+            isOpened = false;
+        }
+
+        else {
+            dialog.classList.add("display");
+            isOpened = true;
+        }
+    }
+
+
+    const calculateBMI = () => {
+        const height = Number(document.getElementsByClassName("input-height")[0].value);
+        const weight = Number(document.getElementsByClassName("input-weight")[0].value);
+        const dialogTitle = document.getElementsByClassName("dialog-title")[0];
+        const dialogResult = document.getElementsByClassName("dialog-title res")[0];
+        const dialogResultIcon = document.getElementsByClassName("result-icon-wrap")[0];
+
+        const result = (weight / ((height * height) / 10000)).toFixed(3);
+
+        if(height == '' || isNaN(height) || height < 0) {
+            dialogTitle.innerHTML = 'Invalid Values entered';
+            dialogResult.innerHTML = '';
+            dialogResultIcon.innerHTML = '<i class="fas fa-times-circle danger"></i>';
+        } else if(weight == '' || isNaN(weight) || weight < 0) {
+            dialogTitle.innerHTML = 'Invalid Values entered';
+            dialogResult.innerHTML = '';
+            dialogResultIcon.innerHTML = '<i class="fas fa-times-circle danger"></i>';
+        } 
+        
+        else {
+            if(result <= 18.5) {
+                dialogResult.innerHTML = 'Result : Underweight';
+                dialogResultIcon.innerHTML = '<i class="fas fa-exclamation-circle danger"></i>';
+                
+            } else if(result >= 18.5 && result <= 24.9) {
+                dialogResult.innerHTML = 'Result : Normal';
+                dialogResultIcon.innerHTML = '<i class="fas fa-check-circle normal"></i>';
+                
+            } else if(result >= 25 && result <= 29.9) {
+                dialogResult.innerHTML = 'Result : Overweight';
+                dialogResultIcon.innerHTML = '<i class="fas fa-exclamation-circle warn"></i>';
+                
+            } else if(result >= 30) {
+                dialogResult.innerHTML = 'Result : Obese';
+                dialogResultIcon.innerHTML = '<i class="fas fa-exclamation-circle danger"></i>';
+            }
+            dialogTitle.innerHTML = `BMI Index: <span>${result}</span>`;
+        }
+
+        toggleDialog();
+    }
+
+    dialogButton.addEventListener("click", toggleDialog);
+    calculateButton.addEventListener("click", calculateBMI);
+</script>
+
+</html>

@@ -1,0 +1,229 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #DCE35B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #45B649, #DCE35B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+    background-color: rgb(247, 245, 245);
+    width: 300px;
+    height: 320px;
+    box-shadow:  5px 5px 5px #ccc,
+    -5px -5px 5px #3e4444;
+    border-radius: 25px;
+    padding: 15px;
+}
+
+.title {
+    text-align: center;
+    color: #662305;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.title::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    display: block;
+    margin-top: 15px;
+    background-color: orange;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.height-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    /*padding: 0 10px;*/
+    border-radius: 25px;
+    margin-top: 15px;
+}
+
+.weight-wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    /*padding: 0 10px;*/
+    border-radius: 25px;
+    margin-top: 15px;
+}
+
+.icon-wrap {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow:  3px 3px 3px #ccc,
+    -3px -3px 3px #3e4444;
+}
+
+.icon {
+    font-size: 25px;
+    color: rgb(0, 140, 255);
+}
+
+.input-height, .input-weight {
+    height: 50px;
+    margin-left: 10px;
+    border: none;
+    padding: 0 5px;
+    width: 130px;
+    border-radius: 15px;
+    box-shadow:  2px 2px 2px #ccc,
+    -2px -2px 2px #3e4444;
+    background: transparent;
+    font-size: 18px;
+    text-align: center;
+}
+
+.input-height:placeholder-shown {
+    font-size: 18px;
+    text-align: center;
+}
+
+.input-weight:placeholder-shown {
+    font-size: 18px;
+    text-align: center;
+}
+
+input-height:focus {
+    box-shadow: 0px 0px 5px #3e4444;
+}
+
+input-weight:focus {
+    box-shadow: 0px 0px 5px #3e4444;
+}
+
+.select {
+    margin-left: 10px;
+    height: 30px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    box-shadow:  2px 2px 2px #ccc,
+    -2px -2px 2px #3e4444;
+    padding: 0 10px;
+    border-radius: 15px;
+    font-size: 18px;
+    color: #4a4b4d;
+}
+
+.btn-calculate {
+    border: none;
+    background-color: rgb(72, 180, 72);
+    padding: 15px 25px;
+    border-radius: 25px;
+    color: white;
+    font-size: 20px;
+    box-shadow:  2px 2px 2px #ccc,
+    -2px -2px 2px #3e4444;
+    cursor: pointer;
+    margin-top: 35px;
+}
+
+.btn-calculate:hover {
+    background-color: rgb(65, 215, 65);
+}
+
+.dialog {
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    position: fixed;
+    background: #DCE35B;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #45B649, #DCE35B);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #45B649, #DCE35B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.btn-dialog-btn {
+    width: 100px;
+    align-self: center;
+    border: none;
+    background-color: rgb(0, 140, 255);
+    padding: 10px 15px;
+    border-radius: 25px;
+    color: white;
+    font-size: 20px;
+    box-shadow:  2px 2px 2px #ccc,
+    -2px -2px 2px #3e4444;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+.btn-dialog-btn:hover {
+    background-color: rgb(0, 122, 223);
+}
+
+.result-icon-wrap {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    box-shadow:  3px 3px 3px rgb(223, 223, 223),
+    -3px -3px 3px white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.result-icon-wrap i {
+    font-size: 50px;
+}
+
+.normal {
+    color: rgb(31, 207, 31);
+}
+
+.dialog-title {
+    font-size: 20px;
+    text-align: center;
+}
+
+.res {
+    margin-top: 10px;
+}
+
+.dialog-container {
+    height: 260px;
+}
+
+.display {
+    display: flex;
+}
+
+.danger {
+    color: red;
+}
+
+.warn {
+    color: orange;
+}
