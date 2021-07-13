@@ -1,66 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>BMI</title>
-
-    <link rel="icon" type="image/x-icon" href="fav.png">
-    <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/de1c10e5c7.js" crossorigin="anonymous"></script>
-</head>
-
-<body>
-
-    <div class="dialog">
-        <div class="container dialog-container">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>BMI</title>
+        
+        <link rel="icon" type="image/x-icon" href="fav.png">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/de1c10e5c7.js" crossorigin="anonymous"></script>
+    </head>
+    
+    <body>
+        
+        <div class="dialog">
+            <div class="container dialog-container">
                 <span class="result-icon-wrap">
                     <i class="fas fa-check-circle normal"></i>
                 </span>
-            <div class="wrapper">
-                <p class="dialog-title"></p>
-                <p class="dialog-title res"></p>
-                <button class="btn-dialog-btn">OK</button>
+                <div class="wrapper">
+                    <p class="dialog-title"></p>
+                    <p class="dialog-title res"></p>
+                    <button class="btn-dialog-btn">OK</button>
+                </div>
             </div>
         </div>
-    </div>
-
-
-
-
-    <div class="container">
-        <p class="title">BMI Calculator</p>
-        <div class="wrapper">
-
-            <div class="height-wrap">
-                <span class="icon-wrap">
-                    <i class="fas fa-ruler-vertical icon"></i>
-                </span>
-                <input type="text" placeholder="Height" class="input-height" />
-                <div class="unit-box">
-                    <p id="units">cm</p>
+        
+        
+        
+        
+        <div class="container">
+            <p class="title">BMI Calculator</p>
+            <div class="wrapper">
+                
+                <div class="height-wrap">
+                    <span class="icon-wrap">
+                        <i class="fas fa-ruler-vertical icon"></i>
+                    </span>
+                    <input type="text" placeholder="Height" class="input-height" />
+                    <div class="unit-box">
+                        <select name="length-unit" id="length-unit">
+                            <option value="cm">cm</option>
+                            <option value="in">in</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-
-            <div class="weight-wrap">
-               <span class="icon-wrap">
-                    <i class="fas fa-weight icon"></i>
-                </span>
-                <input type="text" placeholder="Weight" class="input-weight" />
-                <div class="unit-box">
-                    <p id="units">kg</p>
+                
+                <div class="weight-wrap">
+                    <span class="icon-wrap">
+                        <i class="fas fa-weight icon"></i>
+                    </span>
+                    <input type="text" placeholder="Weight" class="input-weight" />
+                    <div class="unit-box">
+                        <select name="weight-unit" id="weight-unit">
+                            <option value="kg">kg</option>
+                            <option value="lbs">lbs</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
             <button class="btn-calculate">Calculate</button>
         </div>
     </div>
 
-
-    <script src="app.js" charset="utf-8"></script>
-
+    
+    
     
 </body>
 
+<script src="app.js" charset="utf-8"></script>
 </html>
