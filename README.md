@@ -8,3 +8,5 @@ BMI is a measurement of a person's leanness or corpulence based on their height 
 Formula : Weight (kg) / [Height (m)]2
 
 Calculation : [Weight (kg) * 10000] / [Height (cm)]2 
+
+Calculation : [Weight (lbs) / 2.2046] / [Height (in) * 0.0254]2
