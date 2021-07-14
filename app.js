@@ -20,6 +20,7 @@ const toggleDialog = () => {
     }
 }
 
+
 const resultDisplay = (result) => {
     
     if(result <= 18.5) {
@@ -40,10 +41,9 @@ const resultDisplay = (result) => {
     }
     dialogTitle.innerHTML = `BMI Index: <span>${result}</span>`;
     
-    
     toggleDialog();
-    
 }
+
 
 const calculateBMI = () => {
     
@@ -51,43 +51,42 @@ const calculateBMI = () => {
     const weightUnit = document.getElementById('weight-unit').value;
     const height = Number(document.getElementsByClassName("input-height")[0].value);
     const weight = Number(document.getElementsByClassName("input-weight")[0].value);
-    console.log(height);
-    console.log(weight);
-    console.log(lengthUnit);
-    console.log(weightUnit);
     
     if(height == '' || isNaN(height) || height < 0) {
         dialogTitle.innerHTML = 'Invalid Values entered';
         dialogResult.innerHTML = '';
         dialogResultIcon.innerHTML = '<i class="fas fa-times-circle danger"></i>';
-    } else if(weight == '' || isNaN(weight) || weight < 0) {
+        toggleDialog();
+    } 
+    
+    else if(weight == '' || isNaN(weight) || weight < 0) {
         dialogTitle.innerHTML = 'Invalid Values entered';
         dialogResult.innerHTML = '';
         dialogResultIcon.innerHTML = '<i class="fas fa-times-circle danger"></i>';
+        toggleDialog();
     } 
+
+    else {
     
-    else if (lengthUnit === 'cm' && weightUnit === 'kg'){
-        const result = (weight / ((height * height) / 10000)).toFixed(3);
-        console.log(result);
-        resultDisplay(result);
-    }
-    
-    else if (lengthUnit === 'cm' && weightUnit === 'lbs') {
-        const result = ((weight/2.2046) / (height *  height / 10000)).toFixed(3);
-        console.log(result);
-        resultDisplay(result);
-    }
-    
-    else if (lengthUnit === 'in' && weightUnit === 'lbs') {
-        const result = ((weight/2.2046) / (height *  height * 0.00064516)).toFixed(3);
-        console.log(result);
-        resultDisplay(result);
-    }
-    
-    else if (lengthUnit === 'in' && weightUnit === 'kg') {
-        const result = ((weight) / (height *  height * 0.00064516)).toFixed(3);
-        console.log(result);
-        resultDisplay(result);
+        if (lengthUnit === 'cm' && weightUnit === 'kg'){
+            const result = (weight / ((height * height) / 10000)).toFixed(3);
+            resultDisplay(result);
+        }
+        
+        else if (lengthUnit === 'cm' && weightUnit === 'lbs') {
+            const result = ((weight/2.2046) / (height *  height / 10000)).toFixed(3);
+            resultDisplay(result);
+        }
+        
+        else if (lengthUnit === 'in' && weightUnit === 'lbs') {
+            const result = ((weight/2.2046) / (height *  height * 0.00064516)).toFixed(3);
+            resultDisplay(result);
+        }
+        
+        else if (lengthUnit === 'in' && weightUnit === 'kg') {
+            const result = ((weight) / (height *  height * 0.00064516)).toFixed(3);
+            resultDisplay(result);
+        }
     }
 
 }

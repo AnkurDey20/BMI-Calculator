@@ -116,20 +116,6 @@ input-weight:focus {
     box-shadow: 0px 0px 5px #3e4444;
 }
 
-/* .unit-box {
-    margin-left: 20px;
-    height: 40px;
-    background: transparent;
-    border: 0;
-    border-bottom: 1px solid #ccc;
-    box-shadow:  2px 2px 2px #ccc,
-    -2px -2px 2px #3e4444;
-    padding: 0 15px;
-    border-radius: 13px;
-    font-size: 19px;
-    color: #4a4b4d;
-} */
-
 .unit-box{
     margin: auto;
     padding: auto;
@@ -137,8 +123,32 @@ input-weight:focus {
     background: transparent;
 }
 
-#units {
-    margin-top: 7px;
+#length-unit {
+    margin-left: 10px;
+    height: 30px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    box-shadow:  2px 2px 2px #ccc,
+                    -2px -2px 2px #4a4b4d;
+    padding: 0 10px;
+    border-radius: 15px;
+    font-size: 18px;
+    color: #4a4b4d;
+}
+
+#weight-unit {
+    margin-left: 10px;
+    height: 30px;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+    box-shadow:  2px 2px 2px #ccc,
+                    -2px -2px 2px #4a4b4d;
+    padding: 0 10px;
+    border-radius: 15px;
+    font-size: 18px;
+    color: #4a4b4d;   
 }
 
 .btn-calculate {
